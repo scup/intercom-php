@@ -7,12 +7,12 @@ use Guzzle\Service\Client;
 class IntercomBasicAuthClient extends IntercomAbstractClient
 {
     /** @var array The required config variables for this type of client */
-    private static $required = [
+    private static $required = array(
         'app_id',
         'api_key',
         'headers',
         'service_description'
-    ];
+    );
 
     /**
      * Creates a basic auth client with the supplied configuration options
@@ -20,7 +20,7 @@ class IntercomBasicAuthClient extends IntercomAbstractClient
      * @param array $config
      * @return Client|IntercomBasicAuthClient
      */
-    public static function factory($config = [])
+    public static function factory($config = array())
     {
         $client = new self();
 
