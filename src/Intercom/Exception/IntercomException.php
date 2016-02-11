@@ -10,7 +10,7 @@ class IntercomException extends BadResponseException
     /**
      * @var array
      */
-    private $errors = [];
+    private $errors = array();
 
     /**
      * Simple exception factory for creating Intercom standardised exceptions
@@ -61,9 +61,9 @@ class IntercomException extends BadResponseException
         if (static::isValidIntercomError($response_json)) {
             $e->setErrors($response_json['errors']);
         } elseif($intercom_unavailable_error != NULL) {
-            $e ->setErrors([array(
+            $e ->setErrors(array(
               'code' => 'service_unavailable',
-              "message" => $intercom_unavailable_error)]);
+              "message" => $intercom_unavailable_error));
         }
 
         return $e;
